@@ -10,11 +10,15 @@
   },
   "dependencies": {
     "next": "12.2.5",
+    "prismjs": "^1.29.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-simple-code-editor": "^0.13.0",
+    "vm2": "^3.9.10"
   },
   "devDependencies": {
     "@types/node": "18.7.11",
+    "@types/prismjs": "^1.26.0",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "eslint": "8.22.0",
