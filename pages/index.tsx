@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import Header from "../components/header";
 import Question from "../components/question";
+
 import Editor from "react-simple-code-editor";
 import { highlight, languages } from "prismjs";
-import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
-import "prismjs/themes/prism.css"; //Example style, you can use another
+import "prismjs/themes/prism.css";
 
 const Home = () => {
   const [code, setCode] = useState(`function add(a, b) {\n  return a + b;\n}`);
+
   return (
     <main>
       <Header />
@@ -24,7 +25,7 @@ const Home = () => {
         </div>
         <div className="mx-6 mt-8 h-64 border-4 rounded md:w-1/2 md:h-auto">
           <Editor
-            className="min-h-full h-full"
+            className="h-full"
             value={code}
             onValueChange={(code) => setCode(code)}
             highlight={(code) => highlight(code, languages.js, "javascript")}
@@ -38,8 +39,6 @@ const Home = () => {
       </div>
     </main>
   );
-
-  // @media screen (max-width: 768) { height: 64 }
 };
 
 export default Home;
