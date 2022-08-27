@@ -11,7 +11,7 @@ const Home = () => {
   const [code, setCode] = useState(`function add(a, b) {\n  return a + b;\n}`);
 
   const handleSubmit = () => {
-    fetch("http://localhost:3000/api/runcode", {
+    fetch("/api/runcode", {
       method: "POST",
       body: JSON.stringify({
         code: code,
