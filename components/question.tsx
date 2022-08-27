@@ -24,13 +24,13 @@ const Question: React.FC<QuestionProps> = ({
       <section>
         <div>
           <h3 className={titleClassname}>Exemplo de input</h3>
-          <h4 className="font-light text-xl bg-slate-900 text-white p-2  mb-8 mt-6">
+          <h4 className="font-light text-xl bg-slate-900 text-white p-2  mb-8 mt-6 rounded">
             {input}
           </h4>
         </div>
         <div>
           <h1 className={titleClassname}>Exemplo output</h1>
-          <h4 className="font-light text-xl bg-slate-900 text-white p-2 mt-6">
+          <h4 className="font-light text-xl bg-slate-900 text-white p-2 mt-6 rounded">
             {output}
           </h4>
         </div>
