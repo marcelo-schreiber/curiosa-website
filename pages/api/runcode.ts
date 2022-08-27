@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 import { questions, getResult } from "./utils/questions";
-
+import type { AnswerSheet } from "./utils/questions";
 type ResProps = {
-  message: any;
+  message: AnswerSheet | string;
 };
 
 export default async function handler(
