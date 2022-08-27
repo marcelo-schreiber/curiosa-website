@@ -19,8 +19,8 @@ export default async function handler(
 
     const data = qs.stringify({
       code: code,
-      language: "js",
-      input: "1\n 2\n 1",
+      language: "py",
+      input: "1\n2\n1",
     });
 
     const config = {

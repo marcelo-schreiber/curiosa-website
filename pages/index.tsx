@@ -8,7 +8,18 @@ import "prismjs/components/prism-javascript";
 import "prismjs/themes/prism.css";
 
 const Home = () => {
-  const [code, setCode] = useState('console.log("hello, world");');
+  const [code, setCode] = useState(`
+a = int(input())
+b = int(input())
+c = int(input())
+
+d = b**2-4*a*c
+
+x1 = (-b+(d**0.5))/(2*a)
+x2 = (-b-(d**0.5))/(2*a)
+
+print(x1, x2)
+`);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = () => {
