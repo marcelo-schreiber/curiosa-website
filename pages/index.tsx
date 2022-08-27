@@ -6,7 +6,6 @@ import Editor from "react-simple-code-editor";
 import { highlight, languages } from "prismjs";
 import "prismjs/components/prism-javascript";
 import "prismjs/themes/prism.css";
-import axios from "axios";
 
 const Home = () => {
   const [code, setCode] = useState(`a = int(input())
@@ -25,11 +24,14 @@ print(x1, x2)
 
   const handleSubmit = () => {
     setIsLoading(true);
-    axios
-      .post("/api/runcode", {
+    fetch("/api/runcode", {
+      method: "POST",
+      body: JSON.stringify({
         code: code,
         questionNumber: 1,
-      })
+      }),
+    })
+      .then((x) => x.json())
       .then((res) => {
         console.log(res);
         setIsLoading(false);
