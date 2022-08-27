@@ -10,6 +10,17 @@ import "prismjs/themes/prism.css";
 const Home = () => {
   const [code, setCode] = useState(`function add(a, b) {\n  return a + b;\n}`);
 
+  const handleSubmit = () => {
+    fetch("http://localhost:3000/api/runcode", {
+      method: "POST",
+      body: JSON.stringify({
+        code: code,
+      }),
+    })
+      .then((x) => x.json())
+      .then((res) => console.log(res));
+  };
+
   return (
     <main>
       <Header />
@@ -35,6 +46,7 @@ const Home = () => {
               fontSize: 16,
             }}
           />
+          <button onClick={handleSubmit}>Run</button>
         </div>
       </div>
     </main>
