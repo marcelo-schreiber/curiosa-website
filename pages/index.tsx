@@ -18,7 +18,7 @@ const Home = () => {
       }),
     })
       .then((x) => x.json())
-      .then((res) => alert(res.message));
+      .then((res) => console.log(res));
   };
 
   return (
