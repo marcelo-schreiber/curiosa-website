@@ -8,7 +8,7 @@ import "prismjs/components/prism-javascript";
 import "prismjs/themes/prism.css";
 
 const Home = () => {
-  const [code, setCode] = useState(`function add(a, b) {\n  return a + b;\n}`);
+  const [code, setCode] = useState('console.log("hello, world");');
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = () => {
