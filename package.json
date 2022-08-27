@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "capture-console": "^1.0.1",
     "next": "12.2.5",
     "prismjs": "^1.29.0",
     "react": "18.2.0",
@@ -18,6 +19,7 @@
     "vm2": "^3.9.10"
   },
   "devDependencies": {
+    "@types/capture-console": "^1.0.1",
     "@types/node": "18.7.11",
     "@types/prismjs": "^1.26.0",
     "@types/react": "18.0.17",
