@@ -9,8 +9,10 @@ import "prismjs/themes/prism.css";
 
 const Home = () => {
   const [code, setCode] = useState(`function add(a, b) {\n  return a + b;\n}`);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = () => {
+    setIsLoading(true);
     fetch("/api/runcode", {
       method: "POST",
       body: JSON.stringify({
@@ -18,7 +20,10 @@ const Home = () => {
       }),
     })
       .then((x) => x.json())
-      .then((res) => alert(res.message));
+      .then((res) => {
+        alert(res.message);
+        setIsLoading(false);
+      });
   };
 
   return (
@@ -46,7 +51,15 @@ const Home = () => {
               fontSize: 16,
             }}
           />
-          <button onClick={handleSubmit}>Run</button>
+          <button
+            className={`font-bold py-2 px-4 rounded bg-slate-900 text-white my-6 hover:bg-slate-800 ${
+              isLoading ? "cursor-not-allowed" : "cursor-pointer"
+            } shadow-slate-900 shadow`}
+            onClick={handleSubmit}
+            disabled={isLoading}
+          >
+            Testar &gt;
+          </button>
         </div>
       </div>
     </main>
