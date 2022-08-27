@@ -1,12 +1,9 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import axios from "axios";
-import qs from "qs";
 
-// import questions from "./questions";
+import { questions, getResult } from "./utils/questions";
 
 type ResProps = {
-  message: string | boolean;
+  message: any;
 };
 
 export default async function handler(
@@ -16,27 +13,15 @@ export default async function handler(
   try {
     const body = JSON.parse(req.body);
     const code = body?.code;
+    const questionNumber = body?.questionNumber - 1;
 
     if (!code) return res.status(400).json({ message: "Input inválido" });
 
-    const data = qs.stringify({
-      code: code,
-      language: "py",
-      input: "1\n2\n1",
-    });
+    const question = questions[questionNumber];
 
-    const config = {
-      method: "post",
-      url: "https://codex-api.herokuapp.com/",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      data: data,
-    };
+    const isCorrect = await getResult(question, code);
 
-    const result = await axios(config);
-
-    return res.status(201).json({ message: result.data?.output });
+    return res.status(200).json({ message: isCorrect });
   } catch (error: any) {
     return res.status(500).json({ message: error.message });
   }
