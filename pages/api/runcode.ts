@@ -19,7 +19,7 @@ export default async function handler(
 
     const data = qs.stringify({
       code: code,
-      language: "py",
+      language: "js",
     });
 
     const config = {
