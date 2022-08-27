@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import Header from "../components/header";
 import Question from "../components/question";
 import Editor from "react-simple-code-editor";
