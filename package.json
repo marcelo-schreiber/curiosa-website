@@ -6,23 +6,23 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "herokuStart": "next start -p $PORT",
     "lint": "next lint"
   },
   "dependencies": {
-    "capture-console": "^1.0.1",
+    "axios": "^0.27.2",
     "next": "12.2.5",
     "prismjs": "^1.29.0",
+    "qs": "^6.11.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
-    "react-simple-code-editor": "^0.13.0",
-    "vm2": "^3.9.10"
+    "react-simple-code-editor": "^0.13.0"
   },
   "devDependencies": {
     "@types/capture-console": "^1.0.1",
     "@types/node": "18.7.11",
     "@types/prismjs": "^1.26.0",
+    "@types/qs": "^6.9.7",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "autoprefixer": "^10.4.8",
