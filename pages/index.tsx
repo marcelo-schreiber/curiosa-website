@@ -19,6 +19,7 @@ x2 = (-b-(d**0.5))/(2*a)
 
 print(x1, x2)
 `);
+
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = () => {
@@ -42,8 +43,8 @@ print(x1, x2)
       <div className="flex flex-col h-full md:flex-row">
         <div className="md:w-1/2">
           <Question
-            input="1"
-            output="1"
+            input="1 2 1"
+            output="-1 -1"
             title="Title of problem."
             imageUrl="/Logo.svg"
             problem="Given pointers to the head nodes of  linked lists that merge together at some point, find the node where the two lists merge. The merge point is where both lists point to the same node, i.e. they reference the same memory location. It is guaranteed that the two head nodes will be different, and neither will be NULL. If the lists share a common node, return that node's  value."
@@ -87,7 +88,7 @@ print(x1, x2)
                     fill="currentFill"
                   />
                 </svg>
-                <span className="">Testando...</span>
+                <span>Testando...</span>
               </div>
             ) : (
               "Testar >"
