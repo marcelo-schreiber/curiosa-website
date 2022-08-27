@@ -8,8 +8,7 @@ import "prismjs/components/prism-javascript";
 import "prismjs/themes/prism.css";
 
 const Home = () => {
-  const [code, setCode] = useState(`
-a = int(input())
+  const [code, setCode] = useState(`a = int(input())
 b = int(input())
 c = int(input())
 
