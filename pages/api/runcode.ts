@@ -20,6 +20,7 @@ export default async function handler(
     const data = qs.stringify({
       code: code,
       language: "js",
+      input: "1\n 2\n 1",
     });
 
     const config = {
