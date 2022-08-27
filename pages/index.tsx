@@ -41,7 +41,6 @@ const Home = () => {
           }}
         />
       </div>
-      <h1 className="text-lg text-blue-100">working?</h1>
     </main>
   );
 };
