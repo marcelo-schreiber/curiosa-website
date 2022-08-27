@@ -31,7 +31,8 @@ export const getResult = async (
 
   for (let i = 0; i < questions.length; i++) {
     // loop through every question and see output
-    let { input, output } = questions[i];
+    let { input, output: expectedOutput } = questions[i];
+
     const data = qs.stringify({
       code: code,
       language: "py",
@@ -48,14 +49,15 @@ export const getResult = async (
     };
 
     const result = await axios(config);
+    const output = result.data?.output;
 
     answerSheet.answers.push({
       input,
-      output: result.data.output,
-      expectedOutput: output,
+      output,
+      expectedOutput,
     });
 
-    if (result.data?.output !== output) answerSheet.isCorrect = false;
+    if (output !== expectedOutput) answerSheet.isCorrect = false;
   }
 
   return answerSheet;
