@@ -44,7 +44,7 @@ const Question: React.FC<QuestionProps> = ({
             className="rounded-3xl"
             src={`${imageUrl}`}
             alt="important woman"
-            width={275}
+            width={225}
             height={275}
           />
         </div>
