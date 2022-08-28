@@ -12,7 +12,7 @@ type IO = {
   output: string;
 };
 
-type AnswerSheet = {
+export type AnswerSheet = {
   answers: IO[];
   isCorrect: boolean;
 };
