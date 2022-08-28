@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import Header from "../components/header";
 import Question from "../components/question";
 
@@ -7,6 +7,8 @@ import { highlight, languages } from "prismjs";
 import "prismjs/components/prism-python";
 import "prismjs/themes/prism.css";
 import Head from "next/head";
+
+import { questions } from "../data/questions";
 
 const Home = () => {
   const [code, setCode] = useState(`a = int(input())
@@ -21,7 +23,12 @@ x2 = (-b-(d**0.5))/(2*a)
 print(x1, x2)
 `);
 
+  console.log("rendered");
+
   const [isLoading, setIsLoading] = useState(false);
+  const [questionNumber, _] = useState(1);
+  const { input, output, imageUrl, problem, title } =
+    questions[questionNumber - 1];
 
   const handleSubmit = () => {
     setIsLoading(true);
@@ -29,7 +36,7 @@ print(x1, x2)
       method: "POST",
       body: JSON.stringify({
         code: code,
-        questionNumber: 1,
+        questionNumber,
       }),
     })
       .then((x) => x.json())
@@ -48,13 +55,18 @@ print(x1, x2)
         <Header />
         <div className="flex flex-col h-full md:flex-row">
           <div className="md:w-1/2">
-            <Question
-              input="1 2 1"
-              output="-1.0 -1.0"
-              title="Title of problem."
-              imageUrl="/Logo.svg"
-              problem="Given pointers to the head nodes of  linked lists that merge together at some point, find the node where the two lists merge. The merge point is where both lists point to the same node, i.e. they reference the same memory location. It is guaranteed that the two head nodes will be different, and neither will be NULL. If the lists share a common node, return that node's  value."
-            />
+            {useMemo(
+              () => (
+                <Question
+                  input={input}
+                  output={output}
+                  title={title}
+                  imageUrl={imageUrl}
+                  problem={problem}
+                />
+              ),
+              [imageUrl, input, output, problem, title]
+            )}
           </div>
           <div className="mx-6 mt-8 h-64 border-4 rounded md:w-1/2 md:h-auto">
             <Editor
