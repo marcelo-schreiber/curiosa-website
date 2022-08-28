@@ -121,4 +121,3 @@ print(x1, x2)
 };
 
 export default Home;
-``;
