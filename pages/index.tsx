@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useState } from "react";
 import Header from "../components/header";
 import Question from "../components/question";
 
