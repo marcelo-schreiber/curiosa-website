@@ -4,7 +4,7 @@ import Question from "../components/question";
 
 import Editor from "react-simple-code-editor";
 import { highlight, languages } from "prismjs";
-import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-python";
 import "prismjs/themes/prism.css";
 
 const Home = () => {
@@ -56,9 +56,7 @@ print(x1, x2)
             className="h-full"
             value={code}
             onValueChange={(code) => setCode(code)}
-            highlight={(code) =>
-              highlight(code, languages.javascript, "javascript")
-            }
+            highlight={(code) => highlight(code, languages.python, "python")}
             tabSize={4}
             padding={10}
             style={{
