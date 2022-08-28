@@ -55,18 +55,13 @@ print(x1, x2)
         <Header />
         <div className="flex flex-col h-full md:flex-row">
           <div className="md:w-1/2">
-            {useMemo(
-              () => (
-                <Question
-                  input={input}
-                  output={output}
-                  title={title}
-                  imageUrl={imageUrl}
-                  problem={problem}
-                />
-              ),
-              [imageUrl, input, output, problem, title]
-            )}
+            <Question
+              input={input}
+              output={output}
+              title={title}
+              imageUrl={imageUrl}
+              problem={problem}
+            />
           </div>
           <div className="mx-6 mt-8 h-64 border-4 rounded md:w-1/2 md:h-auto">
             <Editor

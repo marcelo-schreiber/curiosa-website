@@ -53,4 +53,4 @@ const Question: React.FC<QuestionProps> = ({
   );
 };
 
-export default Question;
+export default React.memo(Question);
