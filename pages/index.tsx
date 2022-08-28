@@ -56,7 +56,10 @@ print(x1, x2)
             className="h-full"
             value={code}
             onValueChange={(code) => setCode(code)}
-            highlight={(code) => highlight(code, languages.js, "javascript")}
+            highlight={(code) =>
+              highlight(code, languages.javascript, "javascript")
+            }
+            tabSize={4}
             padding={10}
             style={{
               fontFamily: '"Fira code", "Fira Mono", monospace',
