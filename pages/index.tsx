@@ -49,7 +49,7 @@ print(x1, x2)
   return (
     <>
       <Head>
-        <title>Curiosa | </title>
+        <title>Curiosa | Home</title>
       </Head>
       <main>
         <Header />
