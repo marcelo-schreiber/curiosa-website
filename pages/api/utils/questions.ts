@@ -1,10 +1,6 @@
 import axios from "axios";
 import qs from "qs";
-
-type Question = {
-  input: string;
-  output: string;
-};
+import type { Question } from "./inputsandoutputs";
 
 type IO = {
   input: string;
@@ -16,15 +12,6 @@ export type AnswerSheet = {
   answers: IO[];
   isCorrect: boolean;
 };
-
-// BINDER
-export const questions: Question[][] = [
-  [
-    { input: "1\n2\n1", output: "-1.0 -1.0\n" },
-    { input: "3\n-1\n-2", output: "1.0 -0.6666666666666666\n" },
-  ],
-];
-// BINDER
 
 export const getResult = async (
   questions: Question[],

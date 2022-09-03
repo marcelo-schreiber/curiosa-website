@@ -1,7 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { questions, getResult } from "./utils/questions";
+import { getResult } from "./utils/questions";
 import type { AnswerSheet } from "./utils/questions";
+import { questions } from "./utils/inputsandoutputs";
+
 type ResProps = {
   message: AnswerSheet | string;
 };
