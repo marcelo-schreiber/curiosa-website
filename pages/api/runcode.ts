@@ -22,7 +22,7 @@ export default async function handler(
     const question = inputsAndOutputs[questionNumber];
 
     const isCorrect: AnswerSheet =
-      process.env.NODE_ENV !== "production"
+      process.env.NODE_ENV === "production"
         ? await getResult(question, code)
         : {
             answers: [{ expectedOutput: "dev", input: "dev", output: "dev" }],
