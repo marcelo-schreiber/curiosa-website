@@ -21,7 +21,13 @@ export default async function handler(
 
     const question = questions[questionNumber];
 
-    const isCorrect = await getResult(question, code);
+    const isCorrect: AnswerSheet =
+      process.env.NODE_ENV === "production"
+        ? await getResult(question, code)
+        : {
+            answers: [{ expectedOutput: "dev", input: "dev", output: "dev" }],
+            isCorrect: true,
+          };
 
     return res.status(200).json({ message: isCorrect });
   } catch (error: any) {
