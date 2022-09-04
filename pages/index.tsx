@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Header from "../components/header";
 import Question from "../components/question";
 
@@ -41,11 +41,11 @@ print(x1, x2)
     })
       .then((x) => x.json())
       .then(({ message }: { message: AnswerSheet }) => {
-        if (message.isCorrect) {
+        if (message.isCorrect && questionNumber < questions.length) {
           setQuestionNumber(questionNumber + 1);
-          console.log("hej");
         }
         setIsLoading(false);
+        console.log(message);
       });
   };
 

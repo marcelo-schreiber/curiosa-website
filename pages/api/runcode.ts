@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 import { getResult } from "./utils/questions";
 import type { AnswerSheet } from "./utils/questions";
-import { questions } from "./utils/inputsandoutputs";
+import { inputsAndOutputs } from "../../data/inputsandoutputs";
 
 type ResProps = {
   message: AnswerSheet | string;
@@ -19,10 +19,10 @@ export default async function handler(
 
     if (!code) return res.status(400).json({ message: "Input inválido" });
 
-    const question = questions[questionNumber];
+    const question = inputsAndOutputs[questionNumber];
 
     const isCorrect: AnswerSheet =
-      process.env.NODE_ENV === "production"
+      process.env.NODE_ENV !== "production"
         ? await getResult(question, code)
         : {
             answers: [{ expectedOutput: "dev", input: "dev", output: "dev" }],

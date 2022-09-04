@@ -1,6 +1,6 @@
 import axios from "axios";
 import qs from "qs";
-import type { Question } from "./inputsandoutputs";
+import type { Question } from "../../../data/inputsandoutputs";
 
 type IO = {
   input: string;
