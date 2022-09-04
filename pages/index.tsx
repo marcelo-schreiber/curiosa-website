@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/header";
 import Question from "../components/question";
 
@@ -9,6 +9,8 @@ import "prismjs/themes/prism.css";
 import Head from "next/head";
 
 import { questions } from "../data/questions";
+import { AnswerSheet } from "./api/utils/questions";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const Home = () => {
   const [code, setCode] = useState(`a = int(input())
@@ -24,7 +26,7 @@ print(x1, x2)
 `);
 
   const [isLoading, setIsLoading] = useState(false);
-  const [questionNumber, _] = useState(1);
+  const { questionNumber, setQuestionNumber } = useLocalStorage("q", 1);
   const { input, output, imageUrl, problem, title } =
     questions[questionNumber - 1];
 
@@ -38,8 +40,11 @@ print(x1, x2)
       }),
     })
       .then((x) => x.json())
-      .then((res) => {
-        console.log(res);
+      .then(({ message }: { message: AnswerSheet }) => {
+        if (message.isCorrect) {
+          setQuestionNumber(questionNumber + 1);
+          console.log("hej");
+        }
         setIsLoading(false);
       });
   };
