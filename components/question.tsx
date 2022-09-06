@@ -22,7 +22,9 @@ const Question: React.FC<QuestionProps> = ({
     <div className="mx-6">
       <section className="my-8">
         <h2 className={`${titleClassname} mb-8`}>{title}</h2>
-        <p className="font-light text-lg text-justify">{problem}</p>
+        <p className="font-light text-lg text-justify leading-relaxed tracking-wide">
+          {problem}
+        </p>
       </section>
       <section className="md:flex md:justify-between md:items-center">
         <div className="md:w-full md:mr-8">
