@@ -27,8 +27,15 @@ print(x1, x2)
 
   const [isLoading, setIsLoading] = useState(false);
   const { questionNumber, setQuestionNumber } = useLocalStorage("q", 1);
+  const [canGoToNextQuestion, setCanGoToNextQuestion] = useState(false);
+
   const { input, output, imageUrl, problem, title } =
     questions[questionNumber - 1];
+
+  const handleNextQuestion = () => {
+    setQuestionNumber(questionNumber + 1);
+    setCanGoToNextQuestion(false);
+  };
 
   const handleSubmit = () => {
     setIsLoading(true);
@@ -42,7 +49,11 @@ print(x1, x2)
       .then((x) => x.json())
       .then(({ message }: { message: AnswerSheet }) => {
         if (message.isCorrect && questionNumber < questions.length) {
-          setQuestionNumber(questionNumber + 1);
+          setCanGoToNextQuestion(true);
+        }
+
+        if (message.isCorrect && questionNumber === questions.length) {
+          alert("Fim!");
         }
         setIsLoading(false);
         console.log(message);
@@ -56,6 +67,9 @@ print(x1, x2)
       </Head>
       <main>
         <Header />
+        {canGoToNextQuestion && (
+          <button onClick={handleNextQuestion}>Ir à próxima questão</button>
+        )}
         <div className="flex flex-col h-full md:flex-row">
           <div className="md:w-1/2">
             <Question
