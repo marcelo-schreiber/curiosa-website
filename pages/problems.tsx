@@ -12,6 +12,7 @@ import { questions } from "../data/questions";
 import { AnswerSheet } from "./api/utils/questions";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { FaAngleRight } from "react-icons/fa";
+import Answer from "../components/answer";
 
 const Problems = () => {
   const [code, setCode] = useState(`a = int(input())
@@ -32,6 +33,10 @@ print(x1, x2)
 
   const { input, output, imageUrl, problem, title } =
     questions[questionNumber - 1];
+
+  const [questionAnswer, setQuestionAnswer] = useState<null | AnswerSheet>(
+    null
+  );
 
   const handleNextQuestion = () => {
     setQuestionNumber(questionNumber + 1);
@@ -56,8 +61,9 @@ print(x1, x2)
         if (message.isCorrect && questionNumber === questions.length) {
           alert("Fim!");
         }
+
         setIsLoading(false);
-        console.log(message);
+        setQuestionAnswer(message);
       });
   };
 
@@ -68,6 +74,7 @@ print(x1, x2)
       </Head>
       <main>
         <Header />
+
         <div className="flex flex-col h-full md:flex-row">
           <div className="md:w-1/2">
             <Question
@@ -77,6 +84,12 @@ print(x1, x2)
               imageUrl={imageUrl}
               problem={problem}
             />
+            {questionAnswer && (
+              <Answer
+                answers={questionAnswer?.answers}
+                isCorrect={questionAnswer?.isCorrect}
+              />
+            )}
           </div>
           <div className="mx-6 mt-8 h-64 border-4 rounded md:w-1/2 md:h-auto">
             <Editor

@@ -25,7 +25,11 @@ export default async function handler(
       process.env.NODE_ENV === "production"
         ? await getResult(question, code)
         : {
-            answers: [{ expectedOutput: "dev", input: "dev", output: "dev" }],
+            answers: [
+              { expectedOutput: "dev", input: "dev", output: "dev" },
+              { expectedOutput: "dev", input: "dev", output: "dev" },
+              { expectedOutput: "dev", input: "dev", output: "dev" },
+            ],
             isCorrect: true,
           };
 
