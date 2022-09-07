@@ -91,9 +91,9 @@ print(x1, x2)
               />
             )}
           </div>
-          <div className="mx-6 mt-8 h-64 border-4 rounded md:w-1/2 md:h-auto">
+          <div className="mx-6 mt-8 h-96 border-4 rounded md:w-1/2">
             <Editor
-              className="h-full"
+              className="h-96"
               value={code}
               onValueChange={(code) => setCode(code)}
               highlight={(code) => highlight(code, languages.python, "python")}
