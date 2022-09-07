@@ -3,7 +3,7 @@ import Head from "next/head";
 import Header from "../components/header";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
-import { FaAngleRight } from "react-icons/fa";
+import { FaAngleRight, FaGithubSquare } from "react-icons/fa";
 import Image from "next/image";
 
 const Home = () => {
@@ -60,6 +60,15 @@ const Home = () => {
             wrapper="h3"
             repeat={Infinity}
           />
+        </div>
+        <div className="absolute bottom-5 right-5">
+          <a
+            href="https://github.com/marcelo-schreiber/curiosa-website"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaGithubSquare size={48} color="#0F172A" />
+          </a>
         </div>
       </main>
     </>
