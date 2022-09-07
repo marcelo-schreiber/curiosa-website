@@ -50,11 +50,11 @@ const Home = () => {
             className="text-center font-light text-lg mb-6 text-white bg-slate-900 mt-6 rounded py-2 "
             sequence={[
               "Aprenda sobre mulheres na computação",
-              1500,
-              "Aprenda python",
-              1500,
+              2000,
               "Aprenda lógica de programação",
-              1500,
+              2000,
+              "Aprenda python",
+              2000,
             ]}
             speed={60}
             wrapper="h3"
