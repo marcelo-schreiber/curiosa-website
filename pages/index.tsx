@@ -35,6 +35,7 @@ const Home = () => {
             width={420}
             height={252}
             alt="garota programando no computador"
+            priority={true}
           />
         </div>
         <div className="flex flex-col mt-6 xl:max-w-xl xl:mt-0">
