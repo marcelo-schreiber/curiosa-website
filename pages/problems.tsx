@@ -40,6 +40,7 @@ print(x1, x2)
 
   const handleNextQuestion = () => {
     setQuestionNumber(questionNumber + 1);
+    setQuestionAnswer(null);
     setCanGoToNextQuestion(false);
   };
 
@@ -54,6 +55,9 @@ print(x1, x2)
     })
       .then((x) => x.json())
       .then(({ message }: { message: AnswerSheet }) => {
+        setIsLoading(false);
+        setQuestionAnswer(message);
+
         if (message.isCorrect && questionNumber < questions.length) {
           setCanGoToNextQuestion(true);
         }
@@ -61,9 +65,6 @@ print(x1, x2)
         if (message.isCorrect && questionNumber === questions.length) {
           alert("Fim!");
         }
-
-        setIsLoading(false);
-        setQuestionAnswer(message);
       });
   };
 
