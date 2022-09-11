@@ -19,7 +19,7 @@ const Home = () => {
             Começar a jornada
           </h2>
           <p className="text-center leading-relaxed text-lg">
-            Explore essa ferramenta para aprender sobre lógica de programação e,
+            Explore essa ferramenta para aprender sobre lógica de programação na linguagem <p style="color:#6a0dad">PYTHON</p> e,
             ao mesmo tempo, entenda a importância das mulheres no cenário da
             computação.
           </p>
