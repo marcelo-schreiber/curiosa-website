@@ -14,7 +14,7 @@ export const questions = [
       "Katherine Johnson, nasceu em 1918 na Virgínia Ocidental e com apenas 15 anos já havia ingressado na West Virgínia State College, onde cursou todos os cursos que estudavam matemática. Com o apoio do professor W. W. Schieffelin Claytor, decidiu investir na carreira de pesquisadora na área de matemática. Em 1950, com 18 anos, se inscreveu e foi escolhida para uma vaga na NASA, por conta da sua esperiência com equações complexas de geometria, conseguiu uma vaga para trabalhar no projeto Mercury, de 1961. Após isso, participou da equipe que formulou a rota da primeira missão tripulada à Lua, em 1969. E la ficou encarregada de realizar a maioria dos cálculos, além de verificar as contas que eram realizadas nos computadores da NASA. Após sua participação no Projeto Apollo, Katherine Johnson trabalhou em diversas operações da NASA, sendo um dos mais importantes o programa dos ônibus espaciais e nos planos para a missão a Marte. Ela se aposentou em 1986, depois de 33 anos de trabalho. O reconhecimento pelos seus serviços veio em 2015, quando recebeu do então presidente, Barack Obama, o prêmio Presidential Medal of Freedom, conhecido como a maior horaria que se pode receber nos Estados Unidos. E então, em 2016, a NASA criou uma central de pesquisa com seu nome, como forma de homenagem, além disso, em 2016 estreou o filme Hidden Figures (Estrelas além do tempo) baseado na história de Katherine e outras duas Matemáticas Dorothy Vaughn e Mary Jackson. Ela faleceu com 102 anos, no ano de 2020.\nEscreva um código que receba três números a, b e c e imprima o produto dos três.",
     input: "2 5 7",
     output: "70",
-    imageUrl: "/katherine-johnson",
+    imageUrl: "/katherine-johnson.jpg",
   },
   
   {
