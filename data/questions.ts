@@ -21,8 +21,8 @@ export const questions = [
     title: "Paridade",
     problem:
       "Escreva um código que receba um número X e imprima 'PAR' se o número for par e 'IMPAR' se o número for ímpar.",
-    input: "2 5 7",
-    output: "70",
+    input: "7",
+    output: "IMPAR",
     imageUrl: "/margaret-hamilton.png",
   },
   
