@@ -15,17 +15,10 @@ import { FaAngleRight } from "react-icons/fa";
 import Answer from "../components/answer";
 
 const Problems = () => {
-  const [code, setCode] = useState(`a = int(input())
-b = int(input())
-c = int(input())
-
-d = b**2-4*a*c
-
-x1 = (-b+(d**0.5))/(2*a)
-x2 = (-b-(d**0.5))/(2*a)
-
-print(x1, x2)
-`);
+  const [code, setCode] = useState(`# print("hello, world") imprime hello world
+# a = input() recebe o input do usuário na variável 'a'
+# int('2') transforma o texto '2' no número 2
+# escreva seu código aqui`);
 
   const [isLoading, setIsLoading] = useState(false);
   const { questionNumber, setQuestionNumber } = useLocalStorage("q", 1);
