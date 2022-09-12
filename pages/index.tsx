@@ -48,7 +48,7 @@ const Home = () => {
             temática.
           </p>
           <TypeAnimation
-            className="text-center font-light text-lg mb-6 text-white bg-slate-900 mt-6 rounded py-2 "
+            className="text-center font-semibold text-xl mb-6 text-slate-900 mt-6 rounded py-2 "
             sequence={[
               "Aprenda sobre mulheres na computação",
               2000,
@@ -57,7 +57,7 @@ const Home = () => {
               "Aprenda python",
               2000,
             ]}
-            speed={60}
+            speed={50}
             wrapper="h3"
             repeat={Infinity}
           />
