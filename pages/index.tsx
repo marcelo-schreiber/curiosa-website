@@ -19,13 +19,13 @@ const Home = () => {
             Começar a jornada
           </h2>
           <p className="text-center leading-relaxed text-lg">
-            Explore essa ferramenta para aprender sobre lógica de programação na linguagem <span className="font-semibold">PYTHON</span> e,
-            ao mesmo tempo, entenda a importância das mulheres no cenário da
-            computação.
+            Explore essa ferramenta para aprender sobre lógica de programação na
+            linguagem <span className="font-semibold">PYTHON</span> e, ao mesmo
+            tempo, entenda a importância das mulheres no cenário da computação.
           </p>
           <div className="ml-auto mb-12">
             <Link href="/problems">
-              <a className="flex items-center underline text-lg">
+              <a className="flex items-center underline text-xl">
                 Explorar <FaAngleRight />
               </a>
             </Link>
